@@ -3,9 +3,13 @@
 $server_key = "SB-Mid-server-7_n_TLYkELFYzGo224UowxFd";
 
 $is_production = false;
-$api_url = $is_production ? 'https://app.midtrans.com/snap/v1/transactions' :
-                           'https://app.sandbox.midtrans.com/snap/v1/trasactions';
-if (!strpos($_SERVER['REQUEST_URL'], '/change')){
+
+$api_url = $is_production ? 
+        'https://app.midtrans.com/snap/v1/transactions' :
+        'https://app.sandbox.midtrans.com/snap/v1/trasactions';
+
+
+        if (!strpos($_SERVER['REQUEST_URL'], '/change')){
     http_response_code(404);
     echo "wrong path ,make it sure it's'/change";exit();
 }
